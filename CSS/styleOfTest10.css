@@ -1,0 +1,53 @@
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #604E38;
+        }
+
+        #layout{
+            width: 100vw;
+            height: 100vh;
+            display: table;
+            overflow: hidden;
+        }
+        .dish-box{
+            overflow: hidden;
+            display: table-cell;
+            width: 25vw;
+            height: 100vh;
+            transition: transform 1s ease;
+        }
+        #dish-box1{
+            background-image: url(../staticResource/img/四川火锅2.png);
+            background-size: cover;
+        }
+        #dish-box2{
+            background-image: url(../staticResource/img/麻婆豆腐2.png);
+            background-size: cover;
+        }
+        #dish-box3{
+            background-image: url(../staticResource/img/水煮鱼2.png);
+            background-size: cover;
+        }
+        #dish-box4{
+            background-image: url(../staticResource/img/回锅肉2.png);
+            background-size: cover;
+        }
+        .dish-box:hover{
+            transform: translateY(-20px);
+        }
+        .filter{
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            background-color: #000000;
+            transition: opacity 1s ease;
+        }
+        .filter:hover{
+            opacity: 0;
+        }

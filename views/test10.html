@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四大经典川菜</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/styleOfTest10.css">
+</head>
+<body>
+    <div id="layout">
+        <div class="dish-box" id="dish-box1">
+            <div class="filter"></div>
+        </div>
+        <div class="dish-box" id="dish-box2">
+            <div class="filter"></div>
+        </div>
+        <div class="dish-box" id="dish-box3">
+            <div class="filter"></div>
+        </div>
+        <div class="dish-box" id="dish-box4">
+            <div class="filter"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = bind()
+    function bind(){
+        for(let i = 0; i < 4; i++){
+            var dishBox = document.getElementById('dish-box' + (i + 1))
+            dishBox.onclick = function(){
+                window.open('dishDisplay' + i + '.html')
+            }
+        }
+    }
+</script>
+</html>

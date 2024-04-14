@@ -1,0 +1,248 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ABA746;
+    overflow: hidden;
+}
+
+.background-box1 {
+    z-index: 1;
+    width: 36vw;
+    height: 100%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-image: url(../staticResource/img/回锅肉.jpeg);
+    background-size: cover;
+    animation: slideRight1 2s ease;
+}
+
+.background-box2 {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36vw;
+    height: 100%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 1s ease;
+    animation: slideRight2 2s ease;
+}
+
+@keyframes slideRight1 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight2 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.background-box3 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -35vh;
+    top: -15vh;
+    width: 130vh;
+    height: 130vh;
+    border-radius: 50%;
+    opacity: 1;
+    border: 10px solid #604E38;
+    animation: rotate 2s ease;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.background-box2:hover {
+    opacity: 0.5;
+}
+
+#background-box2-header {
+    text-align: center;
+    font-size: 100px;
+    color: aliceblue;
+}
+
+#background-box2-des {
+    text-align: center;
+    font-size: 25px;
+    color: aliceblue;
+}
+
+.textBox {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: right 1s ease;
+    animation: changeOpacity 2s ease;
+}
+
+@keyframes changeOpacity {
+    0% {
+        transform: translateX(+100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#textBox-header {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 72px;
+    color: aliceblue;
+}
+
+#textBox-des {
+    text-align: center;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+#textBox-try {
+    position: absolute;
+    left: 0;
+    width: 180px;
+    height: 60px;
+    color: black;
+    font-size: 20px;
+    border: 4px solid #604E38;
+    transition: all 1s;
+}
+
+#textBox-try:hover {
+    color: white;
+    background-color: #604E38;
+}
+
+#step1 {
+    top: 160px;
+    border-radius: 50%;
+    position: absolute;
+    right: 55px;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    font-weight: 700;
+    border: 5px solid white;
+    background: #F8D584;
+}
+
+#step2 {
+    border-radius: 50%;
+    position: absolute;
+    right: -40px;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    font-weight: 700;
+    border: 5px solid white;
+    background: #F8D584;
+}
+
+#step3 {
+    border-radius: 50%;
+    position: absolute;
+    right: 55px;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    bottom: 160px;
+    font-weight: 700;
+    border: 5px solid white;
+    background: #F8D584;
+}
+
+#step1:hover {
+    border: none;
+    transform: scale(1.1);
+}
+
+#step2:hover {
+    border: none;
+    transform: scale(1.1);
+}
+
+#step3:hover {
+    border: none;
+    transform: scale(1.1);
+}
+
+#cards-box {
+    width: auto;
+    height: auto;
+    flex-direction: column;
+}
+
+.cards-box-row {
+    width: auto;
+    height: 356px;
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 356px;
+    height: 356px;
+    border-radius: 30px;
+    border: 3px solid gray;
+}
+
+.card-foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+}
+
+.card-foot-text {
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    color: gray;
+}
+
+.actived span {
+    color: #4d85ff;
+}

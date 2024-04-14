@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回锅肉交互界面</title>
+    <link href="../staticResource/Bootstrap/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    </link>
+    <link href="../CSS/styleOfDishDisplay3.css" rel="stylesheet">
+    </link>
+
+    <script src="../JS/main.js"></script>
+    <script src="../staticResource/Bootstrap/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="background-box3">
+        <button id="step1" onclick="setTextOfStep(1)">1</button>
+        <button id="step2" onclick="setTextOfStep(2)">2</button>
+        <button id="step3" onclick="setTextOfStep(3)">3</button>
+    </div>
+
+    <div class="background-box1"></div>
+
+    <div class="background-box2" id="back-to">
+        <div style="margin: 10vw 10vh;">
+            <span id="background-box2-header">回锅肉</span>
+            <br><br>
+            <span
+                id="background-box2-des">回锅肉起源四川农村地区,是四川传统菜式中家常菜肴的代表菜之一,其制作原料主要有猪后臀肉、青椒、蒜苗等，所谓“回锅”，是指食材先煮后炒，两次入锅，二次烹调之意。
+            </span>
+        </div>
+    </div>
+
+    <div class="textBox">
+        <div style="width: 100%; height: 25%; display: flex;
+        justify-content: center;
+        align-items: center;">
+            <span id="textBox-header">制 作 步 骤</span>
+        </div>
+        <div style="width: 70%; height: 50%; display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15%;
+        margin-right: 15%; ">
+            <span id="textBox-des"></span>
+        </div>
+        <div style="width: 100%; height: 25%; display: flex;
+        justify-content: center;
+        align-items: center;">
+            <button id="textBox-try" onclick="moveTextBox()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">尝 试
+                一 下</button>
+            <button id="textBox-try" style="left: 230px;" onclick="goTo()">其 他 菜 品</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">尝试回忆起回锅肉的制作步骤</h1>
+                    <button type="button" onclick="moveTextBox()" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2>按照正确的顺序点选卡片</h2>
+                    <div id="cards-box">
+                        <div class="cards-box-row">
+                            <div class="card" id="card1" onclick="toggleCheckbox(0)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/篝火PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">带皮五花肉冷水下锅加入葱段、姜片，花椒7、8粒，黄酒适量煮开</span>
+                                </div>
+                            </div>
+                            <div class="card" id="card2" onclick="toggleCheckbox(1)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/菜刀PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">将肉切成薄片，姜、蒜切片，葱切成斜段</span>
+                                </div>
+                            </div>
+                            <div class="card" id="card3" onclick="toggleCheckbox(2)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/回锅肉卡通PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">下入青蒜，点少许料酒，糖调好味道即可出锅</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cards-box-row">
+                            <div class="card" id="card4" onclick="toggleCheckbox(3)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/酱油PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">适当的加入少许酱油或甜面酱调色，与肉片一起翻炒均匀</span>
+                                </div>
+                            </div>
+                            <div class="card" id="card5" onclick="toggleCheckbox(4)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/大蒜PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">将青蒜的白色部分先用刀拍一下，然后全部斜切成段备用</span>
+                                </div>
+                            </div>
+                            <div class="card" id="card6" onclick="toggleCheckbox(5)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/辣椒PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">炒锅上火，加很少的油煸香辣椒、花椒</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cards-box-row">
+                            <div class="card" id="card7" onclick="toggleCheckbox(6)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/豆瓣酱PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">将肉拨到锅一边，下入豆瓣酱（可以先剁细）炒出红油</span>
+                                </div>
+                            </div>
+                            <div class="card" id="card8" onclick="toggleCheckbox(7)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/肉片PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">下入肉片煸炒，至肉片颜色变透明，边缘略微卷起</span>
+                                </div>
+                            </div>
+                            <div class="card" id="card9" onclick="toggleCheckbox(8)">
+                                <img alt="" width="100%" height="284px" src="../staticResource/img/泡沫PNG.png">
+                                <hr style="margin-top: 3px; margin-bottom: 3px;">
+                                <div class="card-foot">
+                                    <span class="card-foot-text">撇净浮沫，煮至八成熟，取出自然冷却（筷子可插入即可）</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="moveTextBox()" class="btn btn-secondary"
+                        data-bs-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="getSelectedOptions()">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="identifier" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">结果显示</h1>
+                    <button type="button" onclick="moveTextBox()" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="width: auto; height: auto;display: flex;
+                    justify-content: center;
+                    align-items: center;">
+                        <h1 id="result" style="text-align: center;"></h1>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="moveTextBox()" class="btn btn-secondary"
+                        data-bs-dismiss="modal">关闭</button>
+                    <button type="button" onclick="moveTextBox()" class="btn btn-primary"
+                        data-bs-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = bind()
+    window.onload = setText()
+</script>
+</html>
